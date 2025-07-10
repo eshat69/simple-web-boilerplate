@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neumorphic Register</title>
+  <link rel="stylesheet" href="form01.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <button id="loginBtn">Login</button>
+      <button class="active" id="registerBtn">Register</button>
+    </div>
+
+    <div class="input-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Shanta Akter" id="name" />
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="shanta420@gmail.com" id="email" />
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="depressed"/>
+    </div>
+
+    <div class="input-group">
+      <label>Confirm Password</label>
+      <input type="password" id="confirmPassword" placeholder="drop your boddua"/>
+    </div>
+
+    <button class="register-btn" onclick="registerUser()">
+      <i>📝✍️</i> Register
+    </button>
+
+    <div class="or">Or sign up with</div>
+    <div class="social">
+      <div class="social-icon">G</div>
+      <div class="social-icon">f</div>
+      <div class="social-icon">🐦</div>
+    </div>
+  </div>
+
+  <script>
+    function registerUser() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      alert(`Welcome ${name}! Registration successful.`);
+      // You can replace this with actual backend code or Firebase integration.
+    }
+  </script>
+</body>
+</html>
