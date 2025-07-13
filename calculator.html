@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <!-- Inter font CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" class="calculator-display" id="display" disabled>
+        <div class="calculator-buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendCharacter('(')">(</button>
+            <button onclick="appendCharacter(')')">)</button>
+
+            <button class="zero" onclick="appendCharacter('0')">0</button>
+            <button onclick="appendCharacter('1')">1</button>
+            <button onclick="appendCharacter('2')">2</button>
+            <button onclick="appendCharacter('3')">3</button>
+            <button onclick="appendCharacter('4')">4</button>
+            <button onclick="appendCharacter('5')">5</button>
+            <button onclick="appendCharacter('6')">6</button>
+            <button onclick="appendCharacter('7')">7</button>
+            <button onclick="appendCharacter('8')">8</button>
+            <button onclick="appendCharacter('9')">9</button>
+
+           <button class="operator" onclick="appendCharacter('/')">÷</button>
+            <button class="operator" onclick="appendCharacter('*')">×</button>
+            <button class="operator" onclick="appendCharacter('-')">−</button>
+            <button class="operator" onclick="appendCharacter('+')">+</button>
+            <button onclick="appendCharacter('.')">.</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <!-- Your custom CSS here -->
+    <style>
+        /* [Your pasted CSS code here — already included above] */
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: skyblue ;
+        }   
+        .calculator {
+            background-color: #530f0f;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(43, 2, 2, 0.801);
+            width: 550px;
+            padding: 30px;
+        }
+        .calculator-display {
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+            text-align: center ;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <script>
+        const display = document.getElementById('display');
+
+        function appendCharacter(char) {
+            display.value += char;
+        }
+
+        function clearDisplay() {
+            display.value = '';
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch {
+                display.value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+</html>
